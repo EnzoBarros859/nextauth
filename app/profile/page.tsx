@@ -59,25 +59,9 @@ export default async function ProfilePage() {
                       <label className="block text-sm font-medium text-gray-700">Email Address</label>
                       <p className="mt-1 text-gray-900">{user?.email}</p>
                     </div>
-                    <button className="btn-secondary w-full mt-4">
+                    {/* <button className="btn-secondary w-full mt-4">
                       Edit Personal Information
-                    </button>
-                  </div>
-                </div>
-
-                {/* Security Section */}
-                <div className="card mt-6">
-                  <h3 className="text-lg font-semibold text-gray-900 mb-4">Security Settings</h3>
-                  <div className="space-y-4">
-                    <button className="btn-secondary w-full">
-                      Update Password
-                    </button>
-                    <button className="btn-secondary w-full">
-                      Enable Two-Factor Authentication
-                    </button>
-                    <button className="btn-secondary w-full">
-                      Manage Connected Accounts
-                    </button>
+                    </button> */}
                   </div>
                 </div>
               </div>
