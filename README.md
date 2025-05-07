@@ -1,5 +1,7 @@
 # Next.js Authentication with NextAuth.js and Prisma
 
+![image](https://github.com/user-attachments/assets/08fec5c3-8b1d-4e78-8d5b-6f313316763f)
+
 A modern authentication system built with Next.js 14, NextAuth.js, and Prisma, featuring a clean and responsive UI.
 
 ## Features
