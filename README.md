@@ -1,5 +1,7 @@
 # Next.js Authentication with NextAuth.js and Prisma
 
+![image](https://github.com/user-attachments/assets/08fec5c3-8b1d-4e78-8d5b-6f313316763f)
+
 A modern authentication system built with Next.js 14, NextAuth.js, and Prisma, featuring a clean and responsive UI.
 
 ## Features
@@ -10,12 +12,6 @@ A modern authentication system built with Next.js 14, NextAuth.js, and Prisma, f
   - Protected routes
   - Session management
   - Secure password hashing
-
-- 🎨 **Modern UI**
-  - Responsive design
-  - Dark/Light mode support
-  - Clean and intuitive interface
-  - Loading states and animations
 
 - 🛠 **Tech Stack**
   - Next.js 14 (App Router)
@@ -36,7 +32,7 @@ A modern authentication system built with Next.js 14, NextAuth.js, and Prisma, f
 1. **Clone the repository**
    ```bash
    git clone <repository-url>
-   cd nextauth-nextjs14-prisma
+   cd nextauth
    ```
 
 2. **Install dependencies**
@@ -53,20 +49,18 @@ A modern authentication system built with Next.js 14, NextAuth.js, and Prisma, f
    DATABASE_URL="postgresql://username:password@localhost:5432/your_database_name"
 
    # NextAuth
-   NEXTAUTH_URL="http://localhost:3000"
-   NEXTAUTH_SECRET="your-secret-key"
+   AUTH_SECRET="your-secret-key"
 
    # OAuth Providers (Optional)
-   GITHUB_ID="your-github-client-id"
-   GITHUB_SECRET="your-github-client-secret"
-   GOOGLE_ID="your-google-client-id"
-   GOOGLE_SECRET="your-google-client-secret"
+   AUTH_GITHUB_ID="your-github-client-id"
+   AUTH_GITHUB_SECRET="your-github-client-secret"
+   AUTH_GOOGLE_ID="your-google-client-id"
+   AUTH_GOOGLE_SECRET="your-google-client-secret"
    ```
 
 4. **Set up the database**
    ```bash
-   npx prisma generate
-   npx prisma db push
+   npx prisma migrate dev
    ```
 
 5. **Run the development server**
