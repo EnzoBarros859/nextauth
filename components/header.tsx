@@ -1,4 +1,4 @@
-import { auth, signOut } from '@/auth';
+import { auth, signOut } from '@/lib/auth/config';
 import Link from 'next/link';
 
 const Header = async () => {
@@ -11,47 +11,50 @@ const Header = async () => {
   };
 
   return (
-    <header className='bg-white h-20'>
-      <nav className='h-full flex justify-between container items-center'>
+    <header className="bg-white shadow-sm">
+      <nav className="h-16 flex justify-between container items-center">
         <div>
-          <Link href='/' className='text-ct-dark-600 text-2xl font-semibold'>
-            CodevoWeb
+          <Link href="/" className="text-2xl font-bold text-blue-600 hover:text-blue-700 transition-colors">
+            AuthApp
           </Link>
         </div>
-        <ul className='flex items-center space-x-4'>
+        <ul className="flex items-center space-x-6">
           <li>
-            <Link href='/' className='text-ct-dark-600'>
-              Home
+            <Link href="/" className="text-gray-600 hover:text-gray-900 font-medium transition-colors">
+              Dashboard
             </Link>
           </li>
-          {!user && (
+          {!user ? (
             <>
               <li>
-                <Link href='/register' className='text-ct-dark-600'>
-                  Register
+                <Link href="/login" className="text-gray-600 hover:text-gray-900 font-medium transition-colors">
+                  Sign In
                 </Link>
               </li>
               <li>
-                <Link href='/login' className='text-ct-dark-600'>
-                  Login
+                <Link 
+                  href="/register" 
+                  className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors font-medium"
+                >
+                  Create Account
                 </Link>
               </li>
             </>
-          )}
-          {user && (
-            <form action={logoutAction} className='flex'>
+          ) : (
+            <form action={logoutAction} className="flex items-center space-x-6">
+              
               <li>
-                <Link href='/client-side' className='text-ct-dark-600'>
-                  Client
+                <Link href="/profile" className="text-gray-600 hover:text-gray-900 font-medium transition-colors">
+                  Account Settings
                 </Link>
               </li>
-              <li className='ml-4'>
-                <Link href='/profile' className='text-ct-dark-600'>
-                  Profile
-                </Link>
-              </li>
-              <li className='ml-4'>
-                <button>Logout</button>
+              <li>
+                <button 
+                  type="submit"
+                  className="text-red-600 hover:text-red-700 font-medium transition-colors"
+                >
+                  Sign Out
+                </button>
               </li>
             </form>
           )}
